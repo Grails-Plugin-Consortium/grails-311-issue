@@ -8,12 +8,14 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.6.9"
     }
 }
 
 version "0.1"
 group "web.plugin"
 
+apply plugin: 'com.bertramlabs.asset-pipeline'
 apply plugin:"eclipse"
 apply plugin:"idea"
 apply plugin:"org.grails.grails-plugin"
@@ -48,6 +50,7 @@ dependencies {
     compile "org.grails.plugins:cache"
     compile "org.grails.plugins:scaffolding"
     console "org.grails:grails-console"
+    runtime "org.grails.plugins:asset-pipeline"
     profile "org.grails.profiles:web-plugin:3.1.1"
     provided "org.grails:grails-plugin-services"
     provided "org.grails:grails-plugin-domain-class"
